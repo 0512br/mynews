@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--アプリで設定されているロケールを取得し言語設定する-->
 <html lang="{{ app()->getLocale() }}"> 
     <head>
         <meta charset="UTF-8">
@@ -19,7 +18,7 @@
         <link hrel="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
         <!--この章の後半で作成するCSSを読み込む-->
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
     </head>
     
     <body>
