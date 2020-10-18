@@ -21,6 +21,15 @@ return [
     'alpha_dash' => 'The :attribute may only contain letters, numbers, dashes and underscores.',
     'alpha_num' => 'The :attribute may only contain letters and numbers.',
     'array' => 'The :attribute must be an array.',
+    // 14で追記
+    'attributes' => [
+        'title' => 'タイトル',
+        'body' => '本文',
+        'name' => '名前',
+        'gender' => '性別',
+        'hobby' => '趣味',
+        'introduction' => '自己紹介',
+        ],
     'before' => 'The :attribute must be a date before :date.',
     'before_or_equal' => 'The :attribute must be a date before or equal to :date.',
     'between' => [
@@ -95,6 +104,7 @@ return [
     'numeric' => 'The :attribute must be a number.',
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
+    // 14で追記
     'required' => ':attribute に入力が必要です.',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
@@ -145,9 +155,5 @@ return [
     |
     */
 
-    'attributes' => [
-        'title' => 'タイトル',
-        'body' => '本文'
-        ],
 
 ];

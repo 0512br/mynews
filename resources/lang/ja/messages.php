@@ -5,7 +5,7 @@ return [
     'E-Mail Address' => 'メールアドレス',
     'Password' => 'パスワード',
     'Remenber Me' => 'ログイン情報を記憶する',
-    'Name' => '名前',
+    'name' => '名前',
     'Register' => '登録画面',
     'Confirm Password' => '確認パスワード',
     'title' => 'タイトル',

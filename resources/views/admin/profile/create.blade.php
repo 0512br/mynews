@@ -8,6 +8,7 @@
             <div class="col-md-8 mx-auto">
                 <h2>Myプロフィール</h2>
                 <form action="{{ action('Admin\ProfileController@create') }}" method="post">
+                    <!--課題14-->
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -16,26 +17,20 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label for="name" class="col-md-2">{{ __('messages.Name')}}</label>
+                        <label for="name" class="col-md-2">{{ __('messages.name')}}</label>
                         <div class="col-md-10">
                             <input type="text" name="name" class="form-control" value="" required autofocus>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="gender" class="col-md-2">{{ __('messages.gender') }}</label>
-                        <div cass="col-md-10">
-                            <div class="form-check form-check-inline ml-3">
-                                <input class="form-check-input" type="radio" name="gender" value="male" checked>
-                                <label class="form-check-label">{{ __('messages.male') }}</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" value="female" >
-                                <label class="form-check-label">{{ __('messages.female') }}</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" value="others" >
-                                <label class="form-check-label">{{ __('messages.others') }}</label>
-                            </div>
+                        <div class="col-md-10 row">
+                            @foreach ($genders as $key => $gender)
+                            <div class='col-md-2'>
+                                {{Form::radio('gender', $key, false, ['class'=>'form-control', 'id'=>'gender-' . $key])}}
+                                <label for="gender-{{$key}}">{{$gender}}</label>
+                            </div> 
+                            @endforeach
                         </div>
                     </div>
                     <div class="form-group row">
@@ -50,6 +45,8 @@
                             <textarea type="text" name="introduction" class="form-control" value="" rows="10"></textarea>
                         </div>
                     </div>
+                    <input type="submit" class="button-primary" value="更新">
+                    @csrf
                 </form>
             </div>
         </div>

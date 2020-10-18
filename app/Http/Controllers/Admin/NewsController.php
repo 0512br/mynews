@@ -32,7 +32,7 @@ class NewsController extends Controller
         //フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
         //フォームから送信されてきたimageを削除する
-        unset($form['iimage']);
+        unset($form['image']);
         //データベースに保存する
         $news->fill($form);
         $news->save();
