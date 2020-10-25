@@ -30,21 +30,35 @@ class ProfileController extends Controller
     {
         //課題14
         $this->validate($request, Profile::$rules);
-        $profile = new Profiles;
+        $profile = new Profile;
         $form = $request->all();
+        //課題16
         unset($form['_token']);
-        $profiles->fill($form);
-        $profiles->$save;
+        $profile->fill($form)->save();
         return redirect('admin/profile/create');
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
-        return view('admin.profile.edit');
+        $arr = [
+            'genders' => $this->genders,
+            ];//ここにいれる？
+        
+        $profile = Profile::find($request->id);
+        if (empty($profile)) {
+            abort(404);
+        }
+        return view('admin.profile.edit', ['profile_form' => $profile], $arr);
+        // return view('admin.profile.edit', $arr);
     }
 
-    public function update()
+    public function update(Request $request)
     {
+        $this->validate($request, Prifile::$rules);
+        $profile = Prifile::find($request->id);
+        $profile_form = $request->all();
+        unset($profile_form['_token']);
+        $profile->fill($profile_form)->save();
         return redirect('admin/profile/edit');
     }
     
