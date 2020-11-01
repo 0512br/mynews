@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">{{ __('messages.text') }}</label>
+                        <label class="col-md-2">{{ __('messages.body') }}</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
                         </div>

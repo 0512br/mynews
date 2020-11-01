@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 
 // 14で追記、Modelを扱えるようにしている
 use App\News;
+use App\History;
+
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
@@ -77,13 +80,18 @@ class NewsController extends Controller
         } else {
             $news_form['image_path'] = $news->image_path;
         }
-           
-        
+          
         unset($news_form['image']);
         unset($news_form['remove']);
         unset($news_form['_token']);
         $news->fill($news_form)->save();
-        return redirect('admin/news');
+        
+        $history = new History;
+        $history->news_id = $news->id; 
+        $history->edited_at = Carbon::now();
+        $history->save();
+        
+        return redirect('admin/news/');
     }
     
     //16で追記

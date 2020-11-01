@@ -9,7 +9,7 @@ return [
     'Register' => '登録画面',
     'Confirm Password' => '確認パスワード',
     'title' => 'タイトル',
-    'text' => '本文',
+    'body' => '本文',
     'image' => '画像',
     'gender' => '性別',
     'male' => '男',

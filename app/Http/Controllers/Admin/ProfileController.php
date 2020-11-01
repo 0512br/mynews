@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 //課題14
 use App\Profile;
+use App\ProfileHistory;
+
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 
@@ -48,17 +51,23 @@ class ProfileController extends Controller
         if (empty($profile)) {
             abort(404);
         }
-        return view('admin.profile.edit', ['profile_form' => $profile], $arr);
+        return view('admin.profile.edit', ['profile_form' => $profile], $arr);//$arrの位置
         // return view('admin.profile.edit', $arr);
     }
 
     public function update(Request $request)
     {
-        $this->validate($request, Prifile::$rules);
-        $profile = Prifile::find($request->id);
+        $this->validate($request, Profile::$rules);
+        $profile = Profile::find($request->id);
         $profile_form = $request->all();
         unset($profile_form['_token']);
         $profile->fill($profile_form)->save();
+        
+        $history = new ProfileHistory;
+        $history->profile_id = $profile->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
+        
         return redirect('admin/profile/edit');
     }
     
