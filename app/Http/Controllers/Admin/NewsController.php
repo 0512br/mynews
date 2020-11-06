@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-// 14で追記、Modelを扱えるようにしている
 use App\News;
 use App\History;
 
@@ -56,7 +55,6 @@ class NewsController extends Controller
         return view('admin.news.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
     // 16で追記
-    // editアクションは編集画面を処理
     public function edit(Request $request)
     {
         $news = News::find($request->id);
@@ -65,7 +63,7 @@ class NewsController extends Controller
         }
         return view('admin.news.edit', ['news_form' => $news]);
     }
-    // updateアクションは編集画面から送信されたフォームデータを処理
+    
     public function update(Request $request)
     {
         $this->validate($request, News::$rules);
@@ -95,7 +93,8 @@ class NewsController extends Controller
     }
     
     //16で追記
-    public function delete(Request $request){
+    public function delete(Request $request)
+    {
         $news = News::find($request->id);
         $news->delete();
         return redirect('admin/news/');
