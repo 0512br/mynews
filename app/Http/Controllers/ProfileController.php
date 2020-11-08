@@ -18,7 +18,7 @@ class ProfileController extends Controller
         // } else {
         //     $headline = null;
         // }
-        
-        return view('profile.index', ['posts' => $posts]);
+        $genders = config('app.genders');
+        return view('profile.index', ['posts' => $posts, 'genders' => $genders]);
     }
 }

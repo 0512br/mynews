@@ -16,7 +16,7 @@
                                     {{ str_limit($post->name, 150) }}
                                 </div>
                                 <div class="gender">
-                                    {{ str_limit($post->gender, 150) }}
+                                    {{ $genders[$post->gender] }}
                                 </div>
                                 <div class="hobby">
                                     {{ str_limit($post->hobby, 150) }}

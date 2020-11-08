@@ -11,15 +11,15 @@ use App\ProfileHistory;
 use Carbon\Carbon;
 
 class ProfileController extends Controller
-
 {
-    private $genders = [
-        'female' => '女性',
-        'male' => '男性',
-        'other' => 'その他',
-        'none' => '未回答',
-        ];
-        
+    private $genders = [];
+    
+    public function __construct()
+    {
+        //
+        $this->genders = config('app.genders');
+    }
+    
     //課題14-5
     public function add()
     {
