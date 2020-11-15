@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <hr color="#c0c0c0">
+        <hr color="#92464d">
         @if (!is_null($headline))
             <div class="row">
                 <div class="headline col-md-10 mx-auto">
@@ -26,7 +26,7 @@
                 </div>
             </div>
         @endif
-        <hr color='#c0c0c0'>
+        <hr color='#92464d'>
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
                 @foreach($posts as $post)
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                     </div>
-                    <hr color="#c0c0c0">
+                    <hr color="#92464d">
                 @endforeach
             </div>
         </div>

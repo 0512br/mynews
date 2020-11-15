@@ -1,5 +1,6 @@
 body {
-  color: #000;
+  color: #92464d;
+  background-color: #efe5dd;
 }
 
 .header .logo {
@@ -21,11 +22,11 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(146, 70, 77, 0.6);
+  color: #efe5dd;
 }
 
 .headline .caption .title h1 {
-  color: #fff;
   font-size: 1.2em;
 }
 
@@ -35,7 +36,6 @@ body {
 
 .posts .post .date {
   font-size: 0.6em;
-  color: #999;
 }
 
 .posts .post .title {
@@ -66,5 +66,9 @@ body {
 
 .posts .post .introduce {
   font-size: 0.8em;
+}
+
+.navbar-laravel .navbar-brand {
+  color: #92464d;
 }
 

@@ -1,41 +1,39 @@
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #000;
-  color: #fff;
+  background-color: #efe5dd;
+  color: #92464d;
 }
 
 .navbar-laravel {
-  background-color: #000;
+  background-color: #92464d;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .navbar-brand {
-  color: #fff !important;
+  color: #efe5dd !important;
 }
 
 .nav-link {
-  color: #fff !important;
-}
-
-.table-dark {
-  color: #fff;
+  color: #efe5dd !important;
 }
 
 .list-group-item {
-  border-color: #fff;
-  background-color: #000;
+  border-color: #efe5dd;
+  background-color: #92464d;
+  color: #efe5dd;
 }
 
-.login-box {
-  background-color: rgba(0, 0, 0, 0);
+.table-light {
+  color: #92464d;
 }
 
-.login-header {
-  background-color: rgba(0, 0, 0, 0.25);
+a {
+  color: #92464d;
 }
 
-.login-body {
-  background-color: rgba(0, 0, 0, 0.25);
+a:hover {
+  color: #6c757d;
+  font-size: 2em;
 }
 

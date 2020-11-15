@@ -44,7 +44,7 @@
                             <textarea type="text" name="introduction" class="form-control" value="" rows="10"></textarea>
                         </div>
                     </div>
-                    <input type="submit" class="button-primary" value="更新">
+                    <input type="submit" class="button-secondary" value="更新">
                     @csrf
                 </form>
             </div>

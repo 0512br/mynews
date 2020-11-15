@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="{{ action('Admin\ProfileController@add') }}" role="button" class="btn btn-primary">新規作成</a>
+                <a href="{{ action('Admin\ProfileController@add') }}" role="button" class="btn btn-secondary">新規作成</a>
             </div>
             <div class="col-md-8">
                 <form action="{{ action('Admin\ProfileController@index') }}" method="get">
@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-md-2">
                             {{ csrf_field() }}
-                            <input type="submit" name="" class="btn btn-primary" value="{{ __('messages.search') }}">
+                            <input type="submit" name="" class="btn btn-secondary" value="{{ __('messages.search') }}">
                         </div>
                     </div>
                 </form>
@@ -28,8 +28,8 @@
         <div class="row">
             <div class="list-profile col-md-12 mx-auto">
                 <div class="row">
-                    <table class="table table-dark">
-                        <thead>
+                    <table class="table table-light">
+                        <thead >
                             <tr>
                                 <th width="5%">ID</th>
                                 <th width="10%">{{ __('messages.name') }}</th>
