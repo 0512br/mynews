@@ -1,7 +1,7 @@
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #fff;
+  background-color: #efe5dd;
   color: #92464d;
 }
 
@@ -28,12 +28,16 @@ body {
   color: #92464d;
 }
 
+.card-header {
+  background-color: #fff;
+  border-bottom: 2px solid rgba(146, 70, 77, 0.5);
+}
+
 a {
   color: #92464d;
 }
 
 a:hover {
   color: #6c757d;
-  font-size: 2em;
 }
 
