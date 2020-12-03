@@ -9,7 +9,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!--新しいやつ、CSRF Token、CSRFから守ってる -->
         <meta name="csrf-token" content="{{ csrf_token()}}">
-        <!--titleタグが各ページで違う-->
         <!--{{--各ページごとにtitleタグを入れるために@yieldで空けておく--}}-->
         <title>@yield('title')</title>
         <!--Laravel標準で用意されているJavascriptを読み込む-->
@@ -24,7 +23,7 @@
     
     <body>
         <div id="app">
-            <!--画面上部に表示するナビゲーションバー-->
+            <!--ここからナビゲーションバー-->
             <nav class="navbar navbar-expand-mdnavbar navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{url('/') }}">
@@ -39,7 +38,6 @@
                             // 20-12-02 navの作成, routeはweb.phpでnameの記載があるので使えるらしい
                             <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">HOME</a></li>
                         </ul>
-                        <!--Right side of Navbar-->
                         <ul class="navbar-nav ml-auto">
                             {{-- PHP/Laravel 12で追記 --}}
                             <!--Authentication Links-->
@@ -50,15 +48,15 @@
                             @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                    <span class="caret"></span>
+                                    {{ Auth::user()->name }}　<span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" outlink="event.preventDefauly(); document.getElementById('logout-form').submit();">
-                                        {{ __('messages.Logout') }}
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                      {{ __('messages.Logout') }}
                                     </a>
+                                    
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
+                                      @csrf
                                     </form>
                                 </div>
                             </li>
