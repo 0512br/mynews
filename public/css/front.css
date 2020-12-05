@@ -68,8 +68,12 @@ body {
   font-size: 0.8em;
 }
 
-.navbar-laravel .a {
+.a {
   color: #92464d;
+}
+
+.a:hover {
+  color: #911721;
 }
 
 .navbar-laravel .navbar-brand {
@@ -79,5 +83,10 @@ body {
 .navbar-laravel .navbar-toggler {
   color: #92464d;
   font-size: 0.8em;
+}
+
+.navbar-laravel .navbar-nav .nav-link {
+  padding-left: 1rem;
+  color: #92464d;
 }
 

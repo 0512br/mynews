@@ -70,19 +70,28 @@ body {
 }
 
 //場所が見当たらないので直接変更
+.a{
+    color: #92464d;
+}
+.a:hover{
+    color: #911721; 
+}
+
 .navbar-laravel{
-    .a{
-        color: #92464d;
-    }
     .navbar-brand{
         color: #92464d;
     }
-    
-    
     
     .navbar-toggler{
         color: #92464d;
         font-size: 0.8em;
     }
+    
+    .navbar-nav .nav-link{
+        padding-left: 1rem;
+        color:#92464d;
+    }
 }
+
+
 

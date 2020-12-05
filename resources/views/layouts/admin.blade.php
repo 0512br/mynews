@@ -30,13 +30,12 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <soan class="navbar-toggler-icon">メニュー</span>
                     </button>
                     <div class="collapse navbar-toggler-collapse" id="navbarSupportedContent">
                         <!--Left side of Navbar-->
                         <ul class="navbar-nav mr-auto">
-                            // 20-12-02 navの作成, routeはweb.phpでnameの記載があるので使えるらしい
-                            <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}">HOME</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="{{ url('/') }}">HOME</a></li>
                         </ul>
                         <ul class="navbar-nav ml-auto">
                             {{-- PHP/Laravel 12で追記 --}}

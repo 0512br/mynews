@@ -41,3 +41,8 @@ a:hover {
   color: #6c757d;
 }
 
+.navbar-toggler-icon {
+  color: #efe5dd;
+  display: inline;
+}
+

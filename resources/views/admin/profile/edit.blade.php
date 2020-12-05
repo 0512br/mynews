@@ -38,6 +38,23 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="birthday" class="col-md-2">{{ __('messages.birthday') }}</label>
+                        <div class="col-md-10 row">
+                            <div class="col-md-4">
+                                {{Form::selectRange('year', 1920, 2020, 1996, ['class'=>'year'])}}
+                                <label>{{ __('messages.year') }}</label>
+                            </div>
+                            <div class="col-md-4">
+                                {{Form::selectMonth('month', 1, ['class'=>'month'])}}
+                                <label>{{ __('messages.month') }}</label>
+                            </div>
+                            <div class="col-md-4">
+                                {{Form::selectRange('day' , 1, 31, 1, ['class'=>'day'])}}
+                                <label>{{ __('messages.day') }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="hobby" class="col-md-2">{{ __('messages.hobby')}}</label>
                         <div class="col-md-10">
                             <input type="text" name="hobby" class="form-control" value="{{ $profile_form->hobby }}">

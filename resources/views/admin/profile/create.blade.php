@@ -32,6 +32,25 @@
                             @endforeach
                         </div>
                     </div>
+                    <!--生年月日の入力フォームをプルダウンで作成する(20-12-05)-->
+                    <div class="form-group row">
+                        <label for="birthday" class="col-md-2">{{ __('messages.birthday') }}</label>
+                        <div class="col-md-10 row">
+                            <div class="col-md-4">
+                                {{Form::selectRange('year', 1920, 2020, 1996, ['class'=>'year'])}}
+                                <label>{{ __('messages.year') }}</label>
+                            </div>
+                            <div class="col-md-4">
+                                {{Form::selectMonth('month', 1, ['class'=>'month'])}}
+                                <label>{{ __('messages.month') }}</label>
+                            </div>
+                            <div class="col-md-4">
+                                {{Form::selectRange('day' , 1, 31, 1, ['class'=>'day'])}}
+                                <label>{{ __('messages.day') }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ここまで生年月日-->
                     <div class="form-group row">
                         <label for="hobby" class="col-md-2">{{ __('messages.hobby') }}</label>
                         <div class="col-md-10">

@@ -20,4 +20,8 @@ return [
     'hobby' => '趣味',
     'introduction' => '自己紹介',
     'search' => '検索',
+    'birthday' => '生年月日',
+    'year' => '年',
+    'month' => '月',
+    'day' => '日',
 ];

@@ -34,6 +34,7 @@
                                 <th width="5%">ID</th>
                                 <th width="10%">{{ __('messages.name') }}</th>
                                 <th width="5%">{{ __('messages.gender') }}</th>
+                                <th width="10%">{{ __('messages.birthday') }}</th>
                                 <th width="20%">{{ __('messages.hobby') }}</th>
                                 <th width="40%">{{ __('messages.introduction') }}</th>
                             </tr>
@@ -44,6 +45,8 @@
                                 <th>{{ $profile->id }}</th>
                                 <td>{{ \Str::limit($profile->name, 100) }}</td>
                                 <td>{{ \Str::limit($profile->gender, 5) }}</td>
+                                <!--birthday をYY年MM月dd日のように表示させたい、配列$birthdayList = [$year, $month, $day]といった感じで取得するのは可能？-->
+                                <td>{{ \Str::limit($profile->birthday, 20) }}</td>
                                 <td>{{ \Str::limit($profile->hobby, 100) }}</td>
                                 <td>{{ \Str::limit($profile->introduction, 250) }}</td>
                                 <td>
