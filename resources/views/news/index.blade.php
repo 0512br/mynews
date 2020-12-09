@@ -1,13 +1,13 @@
 @extends('layouts.front')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <hr color="#92464d">
         @if (!is_null($headline))
             <div class="row">
                 <div class="headline col-md-10 mx-auto">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-auto">
                             <div class="caption mx-auto">
                                 <div class="image">
                                     @if ($headline->image_path)
