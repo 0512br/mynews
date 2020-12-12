@@ -43,8 +43,8 @@
                             {{-- ログインしていなかった場合、ログイン画面を表示 --}}
                             @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
-                            {{-- ログインしていた場合、ユーザー名とログアウトボタンを表示 --}}
                             @else
+                            {{-- ログインしていた場合、ユーザー名とログアウトボタンを表示 --}}
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}　<span class="caret"></span>

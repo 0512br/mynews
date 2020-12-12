@@ -23,53 +23,51 @@
                     <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
                     <!--    <span class="navbar-toggler-icon"></span>-->
                     <!--</button>-->
+                    @guest
                     <div class="navbar-nav-scroll">
                     {{-- ログインしていなかった場合、ログイン画面を表示 --}}
-                    @guest
                         <ul class="navbar-nav bd-navbar-nav flex-row mr-auto">
                             <li class="nav-item active"><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
                             <li class="nav-item active"><a class="nav-link" href="{{ url('/register') }}">{{ __('messages.Register') }}</a></li>
                         </ul>
                     </div>
                     @else
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            {{-- ログインしていた場合、ユーザー名とログアウトボタンを表示 --}}
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownNewsLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ニュース</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownNewsLink">
-                                    <a class="dropdown-item" href="{{ url('admin/news/create') }}">新規作成</a>
-                                    <a class="dropdown-item" href="{{ url('admin/news') }}">編集・削除</a>
-                                </div>
+                    {{-- ログインしていた場合、ユーザー名とログアウトボタンを表示 --}}
+                    <!--ネットからコピペ-->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        メニュー <span class="caret"></span>
+                    </button>
+                      <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-item nav-link" href="{{ url('admin/news/create') }}">ニュースの新規作成</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownProfileLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">プロフィール</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownProfileLink">
-                                    <a class="dropdown-item" href="{{ url('admin/profile/create') }}">新規作成</a>
-                                    <a class="dropdown-item" href="{{ url('admin/plofile') }}">編集・削除</a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-item nav-link" href="{{ url('admin/news') }}">ニュースの編集</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                    <span class="caret"></span>
+                            <li class="nav-item">
+                                <a class="nav-item nav-link" href="{{ url('admin/profile/create') }}">プロフィールの新規作成</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-item nav-link"  href="{{ url('admin/plofile') }}">プロフィールの編集</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-item nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('messages.Logout') }}
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" ouclink="event.preventDefaut(); document.getElementById('logout-form').submit();">
-                                        {{ __('messages.Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                             </li>
-                            @endguest
-                            {{-- 12追記おわり --}}
-                        </ul>
+                        </div>
+                      </div>
+                     <!--ここまでコピペ -->
+                    @endguest
+                    {{-- 12追記おわり --}}
                     </div>
                 </div>
             </nav>
-            <!--ここまでナビゲーションバー-->
+    <!--ここまでナビゲーションバー-->
             
             <main class="py-4">
                 {{--コンテンツをここに入れるため、@yieldで空ける--}}
