@@ -26,13 +26,13 @@
                         <div class="col-md-10 row">
                             @foreach ($genders as $key => $gender)
                             <div class='col-md-2'>
-                                {{Form::radio('gender', $key, false, ['class'=>'form-control', 'id'=>'gender-' . $key])}}
+                                {{Form::radio('gender', $key, false, ['class'=>'form-control', 'id'=>'gender-'.$key])}}
                                 <label for="gender-{{$key}}">{{$gender}}</label>
                             </div> 
                             @endforeach
                         </div>
                     </div>
-                    <!--生年月日の入力フォームをプルダウンで作成する(20-12-05)-->
+                    {{--<!--生年月日の入力フォームをプルダウンで作成する(20-12-05)-->--}}
                     <div class="form-group row">
                         <label for="birthday" class="col-md-2">{{ __('messages.birthday') }}</label>
                         <div class="col-md-10 row">

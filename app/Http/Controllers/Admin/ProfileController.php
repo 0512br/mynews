@@ -79,6 +79,7 @@ class ProfileController extends Controller
         } else {
             $posts = Profile::all();
         }
+        // dd($posts);
         return view('admin.profile.index', ['posts' => $posts, 'cond_name' => $cond_name]);
     }
     

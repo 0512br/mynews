@@ -31,6 +31,7 @@
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
                 @foreach($posts as $post)
+                <pre>{{ $post->title }}</pre>
                     <div class="post">
                         <div class="row">
                             <div class="text col-md-6">

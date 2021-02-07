@@ -48,10 +48,12 @@ class NewsController extends Controller
     {
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
-            $post = News::where('title', $cond_title)->get();
+            $posts = News::where('title', $cond_title)->get();
         } else {
             $posts = News::all();
         }
+        // dd($request);
+        
         return view('admin.news.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
     // 16で追記
@@ -61,6 +63,7 @@ class NewsController extends Controller
         if (empty($news)) {
             abort(404);
         }
+        // dd($news);
         return view('admin.news.edit', ['news_form' => $news]);
     }
     

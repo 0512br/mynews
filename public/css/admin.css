@@ -46,3 +46,9 @@ a:hover {
   display: inline;
 }
 
+.form-control:focus {
+  outline: 0;
+  border: #92464d;
+  box-shadow: rgba(239, 115, 131, 0.25);
+}
+

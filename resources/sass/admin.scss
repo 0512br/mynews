@@ -63,3 +63,10 @@ a:hover {
     color: #efe5dd;
     display: inline;
 }
+
+// 変更されてない
+.form-control:focus {
+  outline: 0;
+  border: #92464d;
+  box-shadow:rgba(239, 115, 131, 0.25);
+}
